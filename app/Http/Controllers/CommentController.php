@@ -9,7 +9,7 @@ class CommentController extends Controller
 {
     // Show all posts
     public function index() {
-        $comments = Comment::orderBy('created_at', 'desc')->where('post_id','2')->get();
+        $comments = Comment::orderBy('created_at', 'asc')->where('post_id','2')->get();
         return view('comments.index', ['comments' => $comments]);
       }
       
