@@ -9,8 +9,8 @@ class CommentController extends Controller
 {
     // Show all posts
     public function index() {
-        $comments = Comment:orderBy('created_at', 'desc')->where('post_id','1')->get();
-        return view('comment.index', ['comments' => $comments]);
+        $comments = Comment::orderBy('created_at', 'desc')->where('post_id','2')->get();
+        return view('comments.index', ['comments' => $comments]);
       }
       
     // Create post
@@ -27,6 +27,8 @@ class CommentController extends Controller
     $comment = new Comment;
 
     $comment->description = $request->description;
+    $comment->post_id ='2';
+    $comment->user_id ='1';
   
     $comment->save();
     return redirect()->route('comments.index')->with('success', 'Comment created successfully.');
