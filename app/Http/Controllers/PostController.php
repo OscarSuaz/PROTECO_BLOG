@@ -35,6 +35,7 @@ public function store(Request $request) {
     $post->title = $request->title;
     $post->description = $request->description;
     $post->image = $file_name;
+    $post->user_id = '1';
   
     $post->save();
     return redirect()->route('posts.index')->with('success', 'Post created successfully.');
