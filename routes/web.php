@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +12,7 @@ use App\Http\Controllers\CommentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('/', PostController::class)->names([
-  'index' => 'posts.index',
-  'create' => 'posts.create',
-  'store' => 'posts.store',
-  'show' => 'posts.show',
-]);
 
-Route::resource('/comments', CommentController::class)->names([
-  'index' => 'comments.index',
-  'create' => 'comments.create',
-  'store' => 'comments.store',
-  'show' => 'comments.show',
-]);
+Route::get('/', function () {
+    return view('welcome');
+});
