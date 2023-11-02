@@ -17,6 +17,10 @@
     @foreach ($comments as $comment)
       <div class="row">
         <div class="col-12">
+          <p>Calidad General: {{ $comment->calidad_general }}</p>
+          <p>Facilidad: {{ $comment->facilidad }}</p>
+          <p>Clase: {{ $comment->clase }}</p>
+          <p>Calificación Recibida: {{ $comment->calificacion_recibida }}</p>
           <p>{{$comment->description}}</p>
           <hr>
         </div>
