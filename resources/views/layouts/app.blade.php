@@ -19,7 +19,7 @@
 <header>
   <nav class="navbar bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{ route('posts.index') }}">Mini-Blog</a>
+      <a class="navbar-brand" href="{{ url('/') }}">Mini-Blog</a>
     </div>
   </nav>
 </header>
@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('posts.index') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
