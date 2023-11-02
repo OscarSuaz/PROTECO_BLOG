@@ -7,17 +7,17 @@ use App\Models\Comment;
 
 class CommentController extends Controller
 {
-    // Show all posts
+    // Show all comments
     public function index() {
         $comments = Comment::orderBy('created_at', 'desc')->where('post_id','2')->get();
         return view('comments.index', ['comments' => $comments]);
       }
       
-    // Create post
+    // Create commet
     public function create() {
         return view('comments.create');
     }
-    // Store post
+    // Store comment
     public function store(Request $request) {
     // validations
     $request->validate([
