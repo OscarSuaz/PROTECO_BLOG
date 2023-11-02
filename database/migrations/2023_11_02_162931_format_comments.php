@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->float('Calidad General');
-            $table->float('Facilidad');
-            $table->string('Clase');
-            $table->float('Calificacion recibida');
+            $table->string('calidad_general');
+            $table->string('facilidad');
+            $table->string('clase');
+            $table->string('calificacion_recibida');
         });
     }
 
