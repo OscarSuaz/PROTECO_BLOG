@@ -6,6 +6,6 @@
     <title>Home General</title>
 </head>
 <body>
-    <h1>Home General</h1>
+    <h1>¿Por qué le picas en ese boton? </h1>
 </body>
 </html>
