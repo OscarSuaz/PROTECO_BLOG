@@ -33,7 +33,7 @@ class CommentController extends Controller
     $autor = auth()->user()->id;
     
     $comment->post_id ='2';
-    $comment->user_id ='1';
+    $comment->user_id =$autor;
     $comment->calidad_general = $request->calidad_general;
     $comment->facilidad = $request->facilidad;
     $comment->clase = $request->clase;
