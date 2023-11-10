@@ -17,6 +17,7 @@
       @endif
       <div class="card p-3">
       <label for="floatingTextArea">Nombre del Becario</label>
+        <input type="hidden" name="post_id" value="{{ $valor }}" />
         <input type="text" class="form-control" name="nombre_becario" id="floatingTextarea" cols="30" rows="10"></textarea>
         <label for="floatingTextArea">Calidad General</label>
         <input type ="number" step="0.1"class="form-control" name="calidad_general" id="floatingInput" cols="30" rows="10"></textarea>

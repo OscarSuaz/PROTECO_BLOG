@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div class="titlebar">
-    <a class="btn btn-secondary float-end mt-3" href="{{ route('comments.create') }}" role="button">Add Comment</a>
+    <a class="btn btn-secondary float-end mt-3" href="{{ route('comments.create',['post' => $valor]) }}" role="button">Add Comment</a>
     <h1>Comment list</h1>
   </div>
     
