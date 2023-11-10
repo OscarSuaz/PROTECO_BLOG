@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">
   <div class="titlebar">
-    <a class="btn btn-secondary float-end mt-3" href="{{ route('posts.create') }}" role="button">Add Post</a>
+    @if (@Auth::user()->admin == '1')
+      <a class="btn btn-secondary float-end mt-3" href="{{ route('posts.create') }}" role="button">Add Post</a>
+    @endif
     <h1>Mini post list</h1>
   </div>
     
@@ -13,7 +15,7 @@
     <p>{{ $message }}</p>
   </div>
   @endif
-         @if (count($posts) > 0)
+        @if (count($posts) > 0)
     @foreach ($posts as $post)
       <div class="row">
         <div class="col-12">
@@ -26,7 +28,11 @@
             </div>
           </div>
           <p>{{$post->description}}</p>
-          <a href="{{ route('comments.index', ['post_id' => $post->id]) }}" class="btn btn-primary">View Comments</a>
+          @php
+          $valor=$post->id;
+          @endphp
+
+          <a href="{{ route('comments.index',['post' => $valor]) }}" class="btn btn-primary">View Comments</a>
           <hr>
         </div>
       </div>
