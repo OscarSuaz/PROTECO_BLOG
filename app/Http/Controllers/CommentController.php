@@ -30,11 +30,10 @@ class CommentController extends Controller
     ]);
   
     $comment = new Comment;
-
+    $autor = auth()->user()->id;
     
     $comment->post_id ='2';
     $comment->user_id ='1';
-    $comment->nombre_becario = $request->nombre_becario;
     $comment->calidad_general = $request->calidad_general;
     $comment->facilidad = $request->facilidad;
     $comment->clase = $request->clase;

@@ -32,10 +32,12 @@ public function store(Request $request) {
     $file_name = time() . '.' . request()->image->getClientOriginalExtension();
     request()->image->move(public_path('images'), $file_name);
   
+    $autor = auth()->user()->id;
+
     $post->title = $request->title;
     $post->description = $request->description;
     $post->image = $file_name;
-    $post->user_id = '1';
+    $post->user_id = $autor;
   
     $post->save();
     return redirect()->route('posts.index')->with('success', 'Post created successfully.');
