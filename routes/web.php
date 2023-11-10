@@ -15,7 +15,7 @@ use App\Http\Controllers\CommentController;
 |
 */
 Route::get('/', function () {
-  return view('home_general');
+  return redirect('/login');
 });
 
 Route::get('/home_admin', function () {

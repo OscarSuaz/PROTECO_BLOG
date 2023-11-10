@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">
   <div class="titlebar">
+  @if (@Auth::user())
     <a class="btn btn-secondary float-end mt-3" href="{{ route('comments.create',['post' => $valor]) }}" role="button">Add Comment</a>
+  @endif
     <h1>Comment list</h1>
   </div>
     
