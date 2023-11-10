@@ -22,6 +22,7 @@ class CommentController extends Controller
     // validations
     $request->validate([
       'description' => 'required',
+      'nombre_becario' => 'required',
       'calidad_general' => 'required',
       'facilidad' => 'required',
       'clase' => 'required',
@@ -31,7 +32,7 @@ class CommentController extends Controller
     $comment = new Comment;
     $autor = auth()->user()->id;
     
-    $comment->post_id ='2';
+    $comment->post_id =$post_id;
     $comment->user_id =$autor;
     $comment->calidad_general = $request->calidad_general;
     $comment->facilidad = $request->facilidad;

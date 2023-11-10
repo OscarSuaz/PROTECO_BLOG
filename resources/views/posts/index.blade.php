@@ -26,6 +26,7 @@
             </div>
           </div>
           <p>{{$post->description}}</p>
+          <a href="{{ route('comments.index', ['post_id' => $post->id]) }}" class="btn btn-primary">View Comments</a>
           <hr>
         </div>
       </div>
