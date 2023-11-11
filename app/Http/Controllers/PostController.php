@@ -17,6 +17,12 @@ public function index() {
   public function create() {
     return view('posts.create');
   }
+  
+  public function perfil() {
+    $valor =request()->query('perf');
+    $posts = Post::where('user_id', $valor)->get();
+    return view('posts.perfil', ['perf' => $posts]);
+  }
 
   // Store post
 public function store(Request $request) {
@@ -24,6 +30,7 @@ public function store(Request $request) {
     $request->validate([
       'title' => 'required',
       'description' => 'required',
+      'categoria' => 'required|string',
       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
   
@@ -36,6 +43,7 @@ public function store(Request $request) {
 
     $post->title = $request->title;
     $post->description = $request->description;
+    /* $post->categoria = $request->input('categoria'); */
     $post->image = $file_name;
     $post->user_id = $autor;
   

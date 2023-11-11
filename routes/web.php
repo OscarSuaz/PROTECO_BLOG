@@ -16,31 +16,29 @@ use App\Http\Controllers\CommentController;
 */
 Route::get('/', function () {
   return redirect('/login');
+  /* return view ('home_general'); */
 });
 
-Route::get('/home_admin', function () {
-  return view('home_admin');
-});
-
-Route::get('/home_user', function () {
-  return view('home_user');
-});
-
-Route::get('/perfil', function () {
+/* Route::get('/perfil', function () {
   return view('perfil');
+}); */
+
+Route::get('/info', function () {
+  return view('welcome');
 });
 
-Route::get('/categoria1', function () {
-  return view('categoria1');
+Route::get('/practica', function () {
+  return view('practica');
 });
 
-Route::get('/categoria2', function () {
-  return view('categoria2');
+Route::get('/infosis', function () {
+  return view('infosis');
 });
 
 Route::resource('/posts', PostController::class)->names([
   'index' => 'posts.index',
   'create' => 'posts.create',
+  'perfil' => 'posts.perfil',
   'store' => 'posts.store',
   'show' => 'posts.show',
 ]);
@@ -54,3 +52,5 @@ Route::resource('/comments', CommentController::class)->names([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
