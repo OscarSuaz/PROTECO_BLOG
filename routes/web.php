@@ -14,9 +14,31 @@ use App\Http\Controllers\CommentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('/', PostController::class)->names([
+Route::get('/', function () {
+  return redirect('/login');
+  /* return view ('home_general'); */
+});
+
+/* Route::get('/perfil', function () {
+  return view('perfil');
+}); */
+
+Route::get('/info', function () {
+  return view('welcome');
+});
+
+Route::get('/practica', function () {
+  return view('practica');
+});
+
+Route::get('/infosis', function () {
+  return view('infosis');
+});
+
+Route::resource('/posts', PostController::class)->names([
   'index' => 'posts.index',
   'create' => 'posts.create',
+  'perfil' => 'posts.perfil',
   'store' => 'posts.store',
   'show' => 'posts.show',
 ]);
@@ -30,3 +52,5 @@ Route::resource('/comments', CommentController::class)->names([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

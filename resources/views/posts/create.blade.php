@@ -20,6 +20,12 @@
         <input class="form-control" type="text" name="title">
         <label for="floatingTextArea">Description</label>
         <textarea class="form-control" name="description" id="floatingTextarea" cols="30" rows="10"></textarea>
+        <label for="categoria">Category</label>
+        <select id="categoria" name="categoria">
+          <option value="" disabled selected>Selecciona una categoría</option>
+          <option value="Practica">Practica</option>
+          <option value="Teoría">Teoría</option>
+        </select>
         <label for="formFile" class="form-label">Add Image</label>
         <img src="" alt="" class="img-blog">
         <input class="form-control" type="file" name="image">

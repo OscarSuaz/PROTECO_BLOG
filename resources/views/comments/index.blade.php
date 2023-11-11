@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">
   <div class="titlebar">
-    <a class="btn btn-secondary float-end mt-3" href="{{ route('comments.create') }}" role="button">Add Comment</a>
+  @if (@Auth::user())
+    <a class="btn btn-secondary float-end mt-3" href="{{ route('comments.create',['post' => $valor]) }}" role="button">Add Comment</a>
+  @endif
     <h1>Comment list</h1>
   </div>
     
@@ -17,6 +19,7 @@
     @foreach ($comments as $comment)
       <div class="row">
         <div class="col-12">
+          <p>Nombre del Becario: {{$comment->nombre_becario}}</p>
           <p>Calidad General: {{ $comment->calidad_general }}</p>
           <p>Facilidad: {{ $comment->facilidad }}</p>
           <p>Clase: {{ $comment->clase }}</p>
